@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="640 blog">
-    <title>归档: 2016/8 - 640 blog</title>
+    <title>all-tags - 640 blog</title>
     <meta name="author" content="liusilin">
     
     
@@ -14,11 +14,12 @@
     
     
     <meta property="og:type" content="blog">
-<meta property="og:title" content="640 blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/08/index.html">
+<meta property="og:title" content="all-tags">
+<meta property="og:url" content="http://yoursite.com/all-tags/index.html">
 <meta property="og:site_name" content="640 blog">
+<meta property="og:updated_time" content="2016-08-07T15:50:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="640 blog">
+<meta name="twitter:title" content="all-tags">
     
     
         
@@ -184,154 +185,22 @@
                  class="
                         hasCoverMetaIn
                         ">
-                
-    <section class="postShorten-group main-content-wrap">
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/08/07/deploy-hexo-and-write-post/">
-                            deploy hexo and write post
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-08-07T23:12:48+08:00">
-	
-		    8月 07, 2016
-    	
-    </time>
-    
+                <div id="tags-archives" class="main-content-wrap">
+    <form id="filter-form" action="#">
+        <input name="tag" type="text" class="form-control input--xlarge" placeholder="搜索标签" autofocus="autofocus">
+    </form>
+    <h4 class="archive-result text-color-base text-xlarge"
+        data-message-zero="没有找到标签"
+        data-message-one="找到 1 个标签"
+        data-message-other="找到 {n} 个标签"></h4>
+
+        <section>
+        
+    </section>
+    <section class="boxes">
+        
+    </section>
 </div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="environment"><a href="#environment" class="headerlink" title="environment:"></a>environment:</h1><ol>
-<li>nodejs 4.7.7(need gcc 4.8.0 or higher )</li>
-<li>git</li>
-</ol>
-<h1 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo:"></a>install hexo:</h1><ol>
-<li>npm install hexo -g</li>
-<li>hexo init</li>
-<li>hexo generate</li>
-<li>hexo server, then we will view the blog in brower with url: <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></li>
-</ol>
-<h1 id="deploy-to-github"><a href="#deploy-to-github" class="headerlink" title="deploy to github"></a>deploy to github</h1><ol>
-<li><p>edit _config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">   type: git</div><div class="line">   repo: address for github repository</div><div class="line">   branch: master</div></pre></td></tr></table></figure>
-</li>
-<li><p>npm install hexo-deployer-git –save</p>
-</li>
-<li>config ssh</li>
-<li>hexo deploy</li>
-<li>then we can visit <a href="http://liusilin40.github.io" target="_blank" rel="external">http://liusilin40.github.io</a> to the blog</li>
-</ol>
-<h1 id="the-deploy-command-everytime-we-make-a-change"><a href="#the-deploy-command-everytime-we-make-a-change" class="headerlink" title="the deploy command everytime we make a change"></a>the deploy command everytime we make a change</h1><ol>
-<li>hexo clean</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-</ol>
-<h1 id="useful-command"><a href="#useful-command" class="headerlink" title="useful command"></a>useful command</h1><ol>
-<li>hexo new “postName”  </li>
-<li>hexo new page “pageName”</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-<li>hexo help</li>
-</ol>
-<h1 id="the-Theme"><a href="#the-Theme" class="headerlink" title="the Theme"></a>the Theme</h1><blockquote>
-<p><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak</a></p>
-</blockquote>
-<h1 id="when-we-change-something-in-the-theme-tranquilpeak-we-need-to-run-these-command"><a href="#when-we-change-something-in-the-theme-tranquilpeak-we-need-to-run-these-command" class="headerlink" title="when we change something in the theme(tranquilpeak), we need to run these command"></a>when we change something in the theme(tranquilpeak), we need to run these command</h1><ol>
-<li>Go in theme/tranquilpeak folder with cd themes/tranquilpeak</li>
-<li>Run npm install to install NPM dependencies</li>
-<li>Run bower install to install Bower dependencies<blockquote>
-<p>for more information, you can get in <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak</a></p>
-</blockquote>
-</li>
-</ol>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/08/07/deploy-hexo-and-write-post/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/08/07/hello-world/">
-                            Hello World
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-08-07T21:04:27+08:00">
-	
-		    8月 07, 2016
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/08/07/hello-world/#post-footer" class="postShorten-excerpt_link link">
-                                注释和共享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-number">第 1 页 共 1 页</li>
-    </ul>
-</div>
-
-</section>
-
-
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">

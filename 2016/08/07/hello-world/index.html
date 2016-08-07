@@ -10,6 +10,8 @@
     <meta name="author" content="liusilin">
     
     
+        <link rel="icon" href="http://yoursite.com/assets/images/rss">
+    
     
     <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick">
@@ -29,6 +31,8 @@ Quick">
         
     
     
+        <meta property="og:image" content="http://yoursite.com/assets/images/rss"/>
+    
     
     
     
@@ -44,18 +48,18 @@ Quick">
             <!-- Define author's picture -->
 
 
-    
-
-<header id="header" data-behavior="4">
+<header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">640 blog</a>
     </div>
     
         
-            <a  class="header-right-picture "
+            <a  class="header-right-icon "
                 href="#about">
         
+        
+            <i class="fa fa-lg fa-rss"></i>
         
         </a>
     
@@ -64,8 +68,23 @@ Quick">
             <!-- Define author's picture -->
 
 
-<nav id="sidebar" data-behavior="4">
+
+        
+    
+
+<nav id="sidebar" data-behavior="1">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/rss" alt="作者的图片"/>
+                </a>
+                <h4 class="sidebar-profile-name">liusilin</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -168,7 +187,7 @@ Quick">
 </nav>
 
             
-            <div id="main" data-behavior="4"
+            <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
                         ">
@@ -280,7 +299,7 @@ Quick">
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -336,7 +355,7 @@ Quick">
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/07/hello-world/">
@@ -362,11 +381,17 @@ Quick">
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
+        
+            <img id="about-card-picture" src="/assets/images/rss" alt="作者的图片"/>
         
             <h4 id="about-card-name">liusilin</h4>
         
