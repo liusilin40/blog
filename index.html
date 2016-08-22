@@ -199,7 +199,7 @@
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-08-22T14:16:26+08:00">
+    <time itemprop="datePublished" datetime="2016-08-22T14:34:09+08:00">
 	
 		    8月 22, 2016
     	
@@ -244,7 +244,7 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/2016/08/22/linux-passwd-文件内容解析/">
-                            linux-passwd-文件内容解析
+                            linux passwd 文件内容解析
                         </a>
                     
                 </h1>
@@ -265,6 +265,18 @@
 
 它的内容类似下面的例子：
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ cat /etc/passwd</div><div class="line">root:x:0:0:root:/root:/bin/zsh</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</div><div class="line">sync:x:5:0:sync:/sbin:/bin/sync</div><div class="line">shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</div><div class="line">halt:x:7:0:halt:/sbin:/sbin/halt</div><div class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div><div class="line">gopher:x:13:30:gopher:/var/gopher:/sbin/nologin</div><div class="line">ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</div><div class="line">nobody:x:99:99:Nobody:/:/sbin/nologin</div><div class="line">vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin</div><div class="line">abrt:x:173:173::/etc/abrt:/sbin/nologin</div><div class="line">ntp:x:38:38::/etc/ntp:/sbin/nologin</div><div class="line">saslauth:x:499:76:<span class="string">"Saslauthd user"</span>:/var/empty/saslauth:/sbin/nologin</div><div class="line">postfix:x:89:89::/var/spool/postfix:/sbin/nologin</div><div class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</div><div class="line">tcpdump:x:72:72::/:/sbin/nologin</div><div class="line">dbus:x:81:81:System message bus:/:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">nginx:x:498:498:nginx user:/var/cache/nginx:/sbin/nologin</div><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</div><div class="line">git:x:502:502:git repositery:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure>
+
+可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下：
+&gt; mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash 
+&gt; 用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell
+
+1. 用户名：是代表用户账号的字符串
+2. 口令： 在一些系统中，存放着加密后的用户口令字。虽然这个字段存放的只是用户口令的加密串，不是明文，但是由于/etc/passwd文件对所有用户都可读，所以这仍是一个安全隐患。因此，现在许多Linux系统（如SVR4）都使用了shadow技术，把真正的加密后的用户口令字存放到/etc/shadow文件中，而在/etc/passwd文件的口令字段中只存放一个特殊的字符，例如“x”或者“*&quot;。  
+3. 用户标识号: 是一个整数，系统内部用它来标识用户。
+4. 组标识号: 字段记录的是用户所属的用户组。它对应着/etc/group文件中的一条记录。
+5. 注释性描述: 描述字段
+6. 也就是用户的起始工作目录，它是用户在登录到系统之后所处的目录。
+7.登录shell: 用户登录后,使用的shell版本，可以是常用的bash或者zsh，也可以是专门用户做git管理的git-shell。其中/sbin/nologin,表示该用户为『伪用户』，不能登录，如用户bin、nobody等，它们的存在主要是方便系统管理，满足相应的系统进程对文件属主的要求。
 </code></pre>
                     
                         
@@ -466,7 +478,7 @@
                     
                     <div class="media-body">
                         <a class="link-unstyled" href="http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                            <h3 class="media-heading">linux-passwd-文件内容解析</h3>
+                            <h3 class="media-heading">linux passwd 文件内容解析</h3>
                         </a>
                         <span class="media-meta">
                             <span class="media-date text-small">
