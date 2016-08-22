@@ -6,53 +6,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="640 blog">
-    <title>deploy hexo and write post - 640 blog</title>
+    <title>linux-passwd-文件内容解析 - 640 blog</title>
     <meta name="author" content="liusilin">
     
     
         <link rel="icon" href="http://yoursite.com/assets/images/rss">
     
     
-    <meta name="description" content="environment:
-nodejs 4.7.7(need gcc 4.8.0 or higher )
-git
+    <meta name="description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。
+123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
 
-install hexo:
-npm install hexo -g
-hexo init
-hexo generate
-hexo server, then we will view the blog in brower with url: http://localhost:4000
-
-d">
+它的内容类似下面的例子：
+12345678910111213141516171819202122">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="deploy hexo and write post">
-<meta property="og:url" content="http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/index.html">
+<meta property="og:title" content="linux-passwd-文件内容解析">
+<meta property="og:url" content="http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/index.html">
 <meta property="og:site_name" content="640 blog">
-<meta property="og:description" content="environment:
-nodejs 4.7.7(need gcc 4.8.0 or higher )
-git
+<meta property="og:description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。
+123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
 
-install hexo:
-npm install hexo -g
-hexo init
-hexo generate
-hexo server, then we will view the blog in brower with url: http://localhost:4000
-
-d">
-<meta property="og:updated_time" content="2016-08-07T16:10:01.000Z">
+它的内容类似下面的例子：
+12345678910111213141516171819202122">
+<meta property="og:updated_time" content="2016-08-22T06:14:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="deploy hexo and write post">
-<meta name="twitter:description" content="environment:
-nodejs 4.7.7(need gcc 4.8.0 or higher )
-git
+<meta name="twitter:title" content="linux-passwd-文件内容解析">
+<meta name="twitter:description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。
+123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
 
-install hexo:
-npm install hexo -g
-hexo init
-hexo generate
-hexo server, then we will view the blog in brower with url: http://localhost:4000
-
-d">
+它的内容类似下面的例子：
+12345678910111213141516171819202122">
     
     
         
@@ -225,13 +207,13 @@ d">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            deploy hexo and write post
+            linux-passwd-文件内容解析
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-08-07T23:12:48+08:00">
+    <time itemprop="datePublished" datetime="2016-08-22T14:07:28+08:00">
 	
-		    8月 07, 2016
+		    8月 22, 2016
     	
     </time>
     
@@ -241,61 +223,30 @@ d">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="environment"><a href="#environment" class="headerlink" title="environment:"></a>environment:</h1><ol>
-<li>nodejs 4.7.7(need gcc 4.8.0 or higher )</li>
-<li>git</li>
-</ol>
-<h1 id="install-hexo"><a href="#install-hexo" class="headerlink" title="install hexo:"></a>install hexo:</h1><ol>
-<li>npm install hexo -g</li>
-<li>hexo init</li>
-<li>hexo generate</li>
-<li>hexo server, then we will view the blog in brower with url: <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></li>
-</ol>
-<h1 id="deploy-to-github"><a href="#deploy-to-github" class="headerlink" title="deploy to github"></a>deploy to github</h1><ol>
-<li><p>edit _config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">   type: git</div><div class="line">   repo: address for github repository</div><div class="line">   branch: master</div></pre></td></tr></table></figure>
-</li>
-<li><p>npm install hexo-deployer-git –save</p>
-</li>
-<li>config ssh</li>
-<li>hexo deploy</li>
-<li>then we can visit <a href="http://liusilin40.github.io" target="_blank" rel="external">http://liusilin40.github.io</a> to the blog</li>
-</ol>
-<h1 id="the-deploy-command-everytime-we-make-a-change"><a href="#the-deploy-command-everytime-we-make-a-change" class="headerlink" title="the deploy command everytime we make a change"></a>the deploy command everytime we make a change</h1><ol>
-<li>hexo clean</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-</ol>
-<h1 id="useful-command"><a href="#useful-command" class="headerlink" title="useful command"></a>useful command</h1><ol>
-<li>hexo new “postName”  </li>
-<li>hexo new page “pageName”</li>
-<li>hexo generate</li>
-<li>hexo deploy</li>
-<li>hexo help</li>
-</ol>
-<h1 id="the-Theme"><a href="#the-Theme" class="headerlink" title="the Theme"></a>the Theme</h1><blockquote>
-<p><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak</a></p>
-</blockquote>
-<h1 id="when-we-change-something-in-the-theme-tranquilpeak-we-need-to-run-these-command"><a href="#when-we-change-something-in-the-theme-tranquilpeak-we-need-to-run-these-command" class="headerlink" title="when we change something in the theme(tranquilpeak), we need to run these command"></a>when we change something in the theme(tranquilpeak), we need to run these command</h1><ol>
-<li>Go in theme/tranquilpeak folder with cd themes/tranquilpeak</li>
-<li>Run npm install to install NPM dependencies</li>
-<li>Run bower install to install Bower dependencies (when the root user, use this command: bower install –allow-root )<blockquote>
-<p>for more information, you can get in <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak</a></p>
-</blockquote>
-</li>
-</ol>
+            <pre><code>在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ ll /etc/passwd</div><div class="line">-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd</div></pre></td></tr></table></figure>
 
+它的内容类似下面的例子：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ cat /etc/passwd</div><div class="line">root:x:0:0:root:/root:/bin/zsh</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</div><div class="line">sync:x:5:0:sync:/sbin:/bin/sync</div><div class="line">shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</div><div class="line">halt:x:7:0:halt:/sbin:/sbin/halt</div><div class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div><div class="line">gopher:x:13:30:gopher:/var/gopher:/sbin/nologin</div><div class="line">ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</div><div class="line">nobody:x:99:99:Nobody:/:/sbin/nologin</div><div class="line">vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin</div><div class="line">abrt:x:173:173::/etc/abrt:/sbin/nologin</div><div class="line">ntp:x:38:38::/etc/ntp:/sbin/nologin</div><div class="line">saslauth:x:499:76:<span class="string">"Saslauthd user"</span>:/var/empty/saslauth:/sbin/nologin</div><div class="line">postfix:x:89:89::/var/spool/postfix:/sbin/nologin</div><div class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</div><div class="line">tcpdump:x:72:72::/:/sbin/nologin</div><div class="line">dbus:x:81:81:System message bus:/:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">nginx:x:498:498:nginx user:/var/cache/nginx:/sbin/nologin</div><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</div><div class="line">git:x:502:502:git repositery:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure>
+</code></pre>
             
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/linux/">linux</a>
+
+            </div>
         
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/linux-passwd-文件内容解析/"  data-tooltip="linux-passwd-文件内容解析">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/hello-world/"  data-tooltip="Hello World">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -303,7 +254,7 @@ d">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/07/deploy-hexo-and-write-post/" data-tooltip="deploy hexo and write post">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -318,17 +269,17 @@ d">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -366,7 +317,7 @@ d">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/linux-passwd-文件内容解析/"  data-tooltip="linux-passwd-文件内容解析">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/hello-world/"  data-tooltip="Hello World">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -374,7 +325,7 @@ d">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/07/deploy-hexo-and-write-post/" data-tooltip="deploy hexo and write post">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -389,17 +340,17 @@ d">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -419,17 +370,17 @@ d">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="2">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
