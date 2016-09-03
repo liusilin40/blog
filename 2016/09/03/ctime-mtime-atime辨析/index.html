@@ -40,7 +40,7 @@ ctime (change time or status time), 文件状态修改的时间 例如文件的�
 <meta property="og:image" content="http://obsd0zj7w.bkt.clouddn.com/20160903-%E6%96%B0fstab.jpg">
 <meta property="og:image" content="http://obsd0zj7w.bkt.clouddn.com/20160903-remount.jpg">
 <meta property="og:image" content="http://obsd0zj7w.bkt.clouddn.com/20160903-%E8%A7%84%E5%88%991.jpg">
-<meta property="og:updated_time" content="2016-09-03T05:00:29.000Z">
+<meta property="og:updated_time" content="2016-09-03T05:36:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ctime,mtime,atime辨析">
 <meta name="twitter:description" content="linux下的文件有三个时间参数：
@@ -255,8 +255,9 @@ ctime (change time or status time), 文件状态修改的时间 例如文件的�
 <h4 id="文章到这里似乎就可以结束了，但是你细心的话可能会发现，当我cat-filename之后，文件的atime并没有如图一般的发生变化。那么是为什么呢？"><a href="#文章到这里似乎就可以结束了，但是你细心的话可能会发现，当我cat-filename之后，文件的atime并没有如图一般的发生变化。那么是为什么呢？" class="headerlink" title="文章到这里似乎就可以结束了，但是你细心的话可能会发现，当我cat filename之后，文件的atime并没有如图一般的发生变化。那么是为什么呢？"></a>文章到这里似乎就可以结束了，但是你细心的话可能会发现，当我cat filename之后，文件的atime并没有如图一般的发生变化。那么是为什么呢？</h4><p>原来，在linux kenerl 2.6.30之前，文件系统中默认会及时更新atime。但是，在2.6.30之后，内核中修改atime的更新方式，发生了变化，不再是事实更新。<br><strong>为什么在2.6.30之后atime不再实时更新呢？</strong><br>因为实时更新会带来如下问题：</p>
 <ol>
 <li>系统中大量的文件访问，将atime写入到磁盘中，消耗时间，从而降低性能</li>
-<li>这样的操作也会消耗电能<br>在Linux上运行的，很少的应用程序需要获取精确的atime时间，并且Linux核心开发人员从Ext3/Ext4文件系统的性能角度出发，决定在2.6.30版本的内核中修改atime的更新方式，只有在将分区mount挂载的时候指定采用strictatime时，atime会及时更新。除了strictatime以外，还有noatime、relatime选项。<br>当指定为noatime时,noatime的作用如下图：<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-noatime.jpg" alt="noatime"></li>
+<li>这样的操作也会消耗电能</li>
 </ol>
+<p>在Linux上运行的，很少的应用程序需要获取精确的atime时间，并且Linux核心开发人员从Ext3/Ext4文件系统的性能角度出发，决定在2.6.30版本的内核中修改atime的更新方式，只有在将分区mount挂载的时候指定采用strictatime时，atime会及时更新。除了strictatime以外，还有noatime、relatime选项。<br>当指定为noatime时,noatime的作用如下图：<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-noatime.jpg" alt="noatime"></p>
 <p>当指定为relatime时，atime的更新规则如下：</p>
 <ol>
 <li>atime小于ctime或者小于mtime的时候更新</li>
@@ -264,7 +265,7 @@ ctime (change time or status time), 文件状态修改的时间 例如文件的�
 </ol>
 <p>如下图所示：</p>
 <ol>
-<li>首先修改/etc/fstab文件，将/的文件系统的挂载参数设置为relatime。并重新挂载该文件系统，如下图：<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-%E5%8E%9Ffstab.jpg" alt="nochange"><br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-%E6%96%B0fstab.jpg" alt="change"><br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-remount.jpg" alt="remount"></li>
+<li>首先修改/etc/fstab文件，将/的文件系统的挂载参数设置为relatime。并重新挂载该文件系统，如下图：<br>当前的挂载在/下的文件系统设置了noatime<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-%E5%8E%9Ffstab.jpg" alt="nochange"><br>修改noatime属性，改为relatiime<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-%E6%96%B0fstab.jpg" alt="change"><br>重新挂载/下的文件系统，并用mount命令查看挂载后更新的参数<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-remount.jpg" alt="remount"></li>
 <li>使用touch命令修改文件的atime，使其符合relatime模式下atime更新规则的第一项或者第二项。（<strong>touch本来的作用就是改变文件的时间属性，不要误解为touch只是用来创建文件的</strong>）<br><img src="http://obsd0zj7w.bkt.clouddn.com/20160903-%E8%A7%84%E5%88%991.jpg" alt="规则1"></li>
 </ol>
 <p>同理，当需要获取精确的atime时，可以修改/etc/fstab，改为strictatime.就可以令atime及时更新了。</p>
