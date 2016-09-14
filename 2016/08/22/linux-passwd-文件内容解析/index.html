@@ -1,21 +1,92 @@
+<!doctype html>
 
-<!DOCTYPE html>
-<html lang="zh-cn">
-    
+
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="640 blog">
-    <title>linux passwd 文件内容解析 - 640 blog</title>
-    <meta name="author" content="liusilin">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
-        <link rel="icon" href="http://yoursite.com/assets/images/rss">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
     
-    <meta name="description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
 它的内容类似下面的例子：12345678910111213141516171819202122232">
-<meta property="og:type" content="blog">
+<meta property="og:type" content="article">
 <meta property="og:title" content="linux passwd 文件内容解析">
 <meta property="og:url" content="http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/index.html">
 <meta property="og:site_name" content="640 blog">
@@ -26,195 +97,189 @@
 <meta name="twitter:title" content="linux passwd 文件内容解析">
 <meta name="twitter:description" content="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。123root@VM_108_62_centos:~▶ ll /etc/passwd-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd
 它的内容类似下面的例子：12345678910111213141516171819202122232">
-    
-    
-        
-    
-    
-        <meta property="og:image" content="http://yoursite.com/assets/images/portrait.jpg"/>
-    
-    
-    
-    
-    <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-yrst5vo1nxaxbp2g3v9na2wg1lixlpr3ghbjdvskeixmu79deycecx3rh4bt.min.css">
-    <!--STYLES END-->
-    
-    
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/"/>
+
+  <title> linux passwd 文件内容解析 | 640 blog </title>
 </head>
 
-    <body>
-        <div id="blog">
-            <!-- Define author's picture -->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
 
 
-<header id="header" data-behavior="2">
-    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <div class="header-title">
-        <a class="header-title-link" href="/ ">640 blog</a>
-    </div>
+
+
+
+
+
+
+
+
+  
+  
     
-        
-            <a  class="header-right-icon "
-                href="#about">
-        
-        
-            <i class="fa fa-lg fa-portrait.jpg"></i>
-        
-        </a>
-    
-</header>
+  
 
-            <!-- Define author's picture -->
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
 
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
 
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">640 blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
-        
-    
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-<nav id="sidebar" data-behavior="2">
-    <div class="sidebar-container">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-            <div class="sidebar-profile">
-                <a href="/#about">
-                    <img class="sidebar-profile-picture" src="/assets/images/portrait.jpg" alt="作者的图片"/>
-                </a>
-                <h4 class="sidebar-profile-name">liusilin</h4>
-                
-                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
-</h5>
-                
-            </div>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
         
-            <ul class="sidebar-buttons">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/ "
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                        <span class="sidebar-button-desc">首页</span>
-                    </a>
-            </li>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-categories"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                        <span class="sidebar-button-desc">分类</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-tags"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                        <span class="sidebar-button-desc">标签</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/all-archives"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                        <span class="sidebar-button-desc">归档</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                        <span class="sidebar-button-desc">搜索</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="#about"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                        <span class="sidebar-button-desc">关于</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link "
-                             href="/atom.xml"
-                            
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
-                        <span class="sidebar-button-desc">RSS</span>
-                    </a>
-            </li>
-            
-        </ul>
-        
-    </div>
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-            
-            <div id="main" data-behavior="2"
-                 class="
-                        hasCoverMetaIn
-                        ">
-                
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
-    
-    
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            linux passwd 文件内容解析
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-08-22T14:07:28+08:00">
-	
-		    8月 22, 2016
-    	
-    </time>
-    
-</div>
+ </div>
+    </header>
 
-</div>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <h4 id="在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"><a href="#在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。" class="headerlink" title="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"></a>在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ ll /etc/passwd</div><div class="line">-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd</div></pre></td></tr></table></figure>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux passwd 文件内容解析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T14:07:28+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"><a href="#在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。" class="headerlink" title="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"></a>在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ ll /etc/passwd</div><div class="line">-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd</div></pre></td></tr></table></figure>
 <h4 id="它的内容类似下面的例子："><a href="#它的内容类似下面的例子：" class="headerlink" title="它的内容类似下面的例子："></a>它的内容类似下面的例子：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ cat /etc/passwd</div><div class="line">root:x:0:0:root:/root:/bin/zsh</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</div><div class="line">sync:x:5:0:sync:/sbin:/bin/sync</div><div class="line">shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</div><div class="line">halt:x:7:0:halt:/sbin:/sbin/halt</div><div class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div><div class="line">gopher:x:13:30:gopher:/var/gopher:/sbin/nologin</div><div class="line">ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</div><div class="line">nobody:x:99:99:Nobody:/:/sbin/nologin</div><div class="line">vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin</div><div class="line">abrt:x:173:173::/etc/abrt:/sbin/nologin</div><div class="line">ntp:x:38:38::/etc/ntp:/sbin/nologin</div><div class="line">saslauth:x:499:76:<span class="string">"Saslauthd user"</span>:/var/empty/saslauth:/sbin/nologin</div><div class="line">postfix:x:89:89::/var/spool/postfix:/sbin/nologin</div><div class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</div><div class="line">tcpdump:x:72:72::/:/sbin/nologin</div><div class="line">dbus:x:81:81:System message bus:/:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">nginx:x:498:498:nginx user:/var/cache/nginx:/sbin/nologin</div><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</div><div class="line">git:x:502:502:git repositery:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure>
 <h4 id="可以看出，-etc-passwd每一行记录对应的一个用户-每一条记录又被冒号分隔为7个字段-其格式和具体含义如下："><a href="#可以看出，-etc-passwd每一行记录对应的一个用户-每一条记录又被冒号分隔为7个字段-其格式和具体含义如下：" class="headerlink" title="可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下："></a>可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash </div><div class="line">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell</div></pre></td></tr></table></figure>
 <ol>
@@ -227,340 +292,282 @@
 <li>登录shell: 用户登录后,使用的shell版本，可以是常用的bash或者zsh，也可以是专门用户做git管理的git-shell。其中/sbin/nologin,表示该用户为『伪用户』，不能登录，如用户bin、nobody等，它们的存在主要是方便系统管理，满足相应的系统进程对文件属主的要求。</li>
 </ol>
 
-            
-        </div>
+      
     </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">标签</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/tags/linux/">linux</a>
 
-            </div>
+    <div>
+      
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/HTTP-协议/"  data-tooltip="HTTP 协议">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/07/deploy-hexo-and-write-post/" data-tooltip="deploy hexo and write post">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/07/deploy-hexo-and-write-post/" rel="next" title="deploy hexo and write post">
+                <i class="fa fa-chevron-left"></i> deploy hexo and write post
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/22/HTTP-协议/" rel="prev" title="HTTP 协议">
+                HTTP 协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
         </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
+      
 
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="liusilin" />
+          <p class="site-author-name" itemprop="name">liusilin</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
 
         
-            
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
         
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"><span class="nav-number">1.</span> <span class="nav-text">在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#它的内容类似下面的例子："><span class="nav-number">2.</span> <span class="nav-text">它的内容类似下面的例子：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以看出，-etc-passwd每一行记录对应的一个用户-每一条记录又被冒号分隔为7个字段-其格式和具体含义如下："><span class="nav-number">3.</span> <span class="nav-text">可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
     </div>
-</article>
+  </aside>
 
 
-
-                <footer id="footer" class="main-content-wrap">
-    <span class="copyrights">
-        Copyrights &copy; 2016 liusilin. All Rights Reserved.
-    </span>
-</footer>
-
-            </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/22/HTTP-协议/"  data-tooltip="HTTP 协议">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/07/deploy-hexo-and-write-post/" data-tooltip="deploy hexo and write post">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liusilin</span>
 </div>
 
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="2">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
-<div id="share-options-mask" class="share-options-mask"></div>
 
-            
-        </div>
-        
-
-
-    
-        
-    
-
-<div id="about">
-    <div id="about-card">
-        <div id="about-btn-close">
-            <i class="fa fa-remove"></i>
-        </div>
-        
-            <img id="about-card-picture" src="/assets/images/portrait.jpg" alt="作者的图片"/>
-        
-            <h4 id="about-card-name">liusilin</h4>
-        
-            <div id="about-card-bio"><p>author.bio</p>
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
 </div>
-        
-        
-            <div id="about-card-job">
-                <i class="fa fa-briefcase"></i>
-                <br/>
-                <p>author.job</p>
 
-            </div>
         
+
         
-            <div id="about-card-location">
-                <i class="fa fa-map-marker"></i>
-                <br/>
-                wuhan
-            </div>
-        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
-</div>
+  </div>
 
-        <div id="algolia-search-modal" class="modal-container">
-    <div class="modal">
-        <div class="modal-header">
-            <span class="close-button"><i class="fa fa-close"></i></span>
-            <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
-                <span class="searchby-algolia-text text-color-light text-small">by</span>
-                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-            </a>
-            <i class="search-icon fa fa-search"></i>
-            <form id="algolia-search-form">
-                <input type="text" id="algolia-search-input" name="search"
-                    class="form-control input--large search-input" placeholder="Search "
-                    autofocus="autofocus"/>
-            </form>
-        </div>
-        <div class="modal-body">
-            <div class="no-result text-color-light text-center">没有找到文章</div>
-            <div class="results">
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/">
-                            <h3 class="media-heading">deploy hexo and write post</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年8月7日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/08/22/linux-passwd-文件内容解析/">
-                            <h3 class="media-heading">linux passwd 文件内容解析</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年8月22日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/08/22/HTTP-协议/">
-                            <h3 class="media-heading">HTTP 协议</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年8月22日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/09/03/ctime-mtime-atime辨析/">
-                            <h3 class="media-heading">ctime,mtime,atime辨析</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年9月3日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-                <div class="media">
-                    
-                    <div class="media-body">
-                        <a class="link-unstyled" href="http://yoursite.com/2016/09/03/hello-world/">
-                            <h3 class="media-heading">Hello World</h3>
-                        </a>
-                        <span class="media-meta">
-                            <span class="media-date text-small">
-                                
-                                    2016年9月3日
-                                
-                            </span>
-                        </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
-                    </div>
-                    <div style="clear:both;"></div>
-                    <hr>
-                </div>
-                
-            </div>
-        </div>
-        <div class="modal-footer">
-            <p class="results-count text-medium"
-                data-message-zero="没有找到文章"
-                data-message-one="找到 1 篇文章"
-                data-message-other="找到 {n} 篇文章">
-                找到 5 篇文章
-            </p>
-        </div>
-    </div>
-</div>
-        
-<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
-        <!--SCRIPTS-->
-<script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
-<!--SCRIPTS END-->
+  
 
-    
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
-    </body>
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
