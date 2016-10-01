@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[ctime,mtime,atime辨析]]></title>
-      <url>http://yoursite.com/2016/09/03/ctime-mtime-atime%E8%BE%A8%E6%9E%90/</url>
+      <url>http://liusilin40.github.io/2016/09/03/ctime-mtime-atime%E8%BE%A8%E6%9E%90/</url>
       <content type="html"><![CDATA[<h4 id="linux下的文件有三个时间参数："><a href="#linux下的文件有三个时间参数：" class="headerlink" title="linux下的文件有三个时间参数："></a>linux下的文件有三个时间参数：</h4><ol>
 <li>mtime (modification time), 内容修改时间。<br> 指文件的<strong>内容</strong>发生变化时，而更新的时间。</li>
 <li>atime (access time), 最后访问时间。<br> 这里的访问时间是指文件被读取，而更新的时间。</li>
@@ -42,13 +42,13 @@
     
     <entry>
       <title><![CDATA[HTTP 协议]]></title>
-      <url>http://yoursite.com/2016/08/22/HTTP-%E5%8D%8F%E8%AE%AE/</url>
+      <url>http://liusilin40.github.io/2016/08/22/HTTP-%E5%8D%8F%E8%AE%AE/</url>
       <content type="html"><![CDATA[<h4 id="好文mark-HTTP协议入门"><a href="#好文mark-HTTP协议入门" class="headerlink" title="好文mark,HTTP协议入门."></a>好文mark,<a href="http://www.ruanyifeng.com/blog/2016/08/http.html?bsh_bid=1486005889" target="_blank" rel="external">HTTP协议入门</a>.</h4>]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[linux passwd 文件内容解析]]></title>
-      <url>http://yoursite.com/2016/08/22/linux-passwd-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E8%A7%A3%E6%9E%90/</url>
+      <url>http://liusilin40.github.io/2016/08/22/linux-passwd-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E8%A7%A3%E6%9E%90/</url>
       <content type="html"><![CDATA[<h4 id="在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"><a href="#在linux-etc-passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。" class="headerlink" title="在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。"></a>在linux /etc/passwd文件中，记录着系统每一个用户的一些基本信息。这个文件对所有用户都是可读的。</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ ll /etc/passwd</div><div class="line">-rw-r--r-- 1 root root 1.2K 8月  22 14:00 /etc/passwd</div></pre></td></tr></table></figure>
 <h4 id="它的内容类似下面的例子："><a href="#它的内容类似下面的例子：" class="headerlink" title="它的内容类似下面的例子："></a>它的内容类似下面的例子：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">root@VM_108_62_centos:~</div><div class="line">▶ cat /etc/passwd</div><div class="line">root:x:0:0:root:/root:/bin/zsh</div><div class="line">bin:x:1:1:bin:/bin:/sbin/nologin</div><div class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</div><div class="line">adm:x:3:4:adm:/var/adm:/sbin/nologin</div><div class="line">lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin</div><div class="line">sync:x:5:0:sync:/sbin:/bin/sync</div><div class="line">shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown</div><div class="line">halt:x:7:0:halt:/sbin:/sbin/halt</div><div class="line">mail:x:8:12:mail:/var/spool/mail:/sbin/nologin</div><div class="line">uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin</div><div class="line">operator:x:11:0:operator:/root:/sbin/nologin</div><div class="line">games:x:12:100:games:/usr/games:/sbin/nologin</div><div class="line">gopher:x:13:30:gopher:/var/gopher:/sbin/nologin</div><div class="line">ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin</div><div class="line">nobody:x:99:99:Nobody:/:/sbin/nologin</div><div class="line">vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin</div><div class="line">abrt:x:173:173::/etc/abrt:/sbin/nologin</div><div class="line">ntp:x:38:38::/etc/ntp:/sbin/nologin</div><div class="line">saslauth:x:499:76:<span class="string">"Saslauthd user"</span>:/var/empty/saslauth:/sbin/nologin</div><div class="line">postfix:x:89:89::/var/spool/postfix:/sbin/nologin</div><div class="line">sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin</div><div class="line">tcpdump:x:72:72::/:/sbin/nologin</div><div class="line">dbus:x:81:81:System message bus:/:/sbin/nologin</div><div class="line">apache:x:48:48:Apache:/var/www:/sbin/nologin</div><div class="line">nginx:x:498:498:nginx user:/var/cache/nginx:/sbin/nologin</div><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash</div><div class="line">git:x:502:502:git repositery:/home/git:/usr/bin/git-shell</div></pre></td></tr></table></figure>
 <h4 id="可以看出，-etc-passwd每一行记录对应的一个用户-每一条记录又被冒号分隔为7个字段-其格式和具体含义如下："><a href="#可以看出，-etc-passwd每一行记录对应的一个用户-每一条记录又被冒号分隔为7个字段-其格式和具体含义如下：" class="headerlink" title="可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下："></a>可以看出，/etc/passwd每一行记录对应的一个用户,每一条记录又被冒号分隔为7个字段,其格式和具体含义如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql:x:27:27:MySQL Server:/var/lib/mysql:/bin/bash </div><div class="line">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell</div></pre></td></tr></table></figure>
@@ -66,7 +66,7 @@
     
     <entry>
       <title><![CDATA[deploy hexo and write post]]></title>
-      <url>http://yoursite.com/2016/08/07/deploy-hexo-and-write-post/</url>
+      <url>http://liusilin40.github.io/2016/08/07/deploy-hexo-and-write-post/</url>
       <content type="html"><![CDATA[<h1 id="environment"><a href="#environment" class="headerlink" title="environment:"></a>environment:</h1><ol>
 <li>nodejs 4.7.7(need gcc 4.8.0 or higher )</li>
 <li>git</li>
@@ -85,7 +85,7 @@
 </li>
 <li>config ssh</li>
 <li>hexo deploy</li>
-<li>then we can visit <a href="http://liusilin40.github.io" target="_blank" rel="external">http://liusilin40.github.io</a> to the blog</li>
+<li>then we can visit <a href="http://liusilin40.github.io">http://liusilin40.github.io</a> to the blog</li>
 </ol>
 <h1 id="the-deploy-command-everytime-we-make-a-change"><a href="#the-deploy-command-everytime-we-make-a-change" class="headerlink" title="the deploy command everytime we make a change"></a>the deploy command everytime we make a change</h1><ol>
 <li>hexo clean</li>
