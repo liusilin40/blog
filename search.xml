@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title><![CDATA[nginx开启/关闭目录浏览权限]]></title>
+      <url>http://blog.jade640.pub/2016/10/19/nginx%E5%BC%80%E5%90%AF-%E5%85%B3%E9%97%AD%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88%E6%9D%83%E9%99%90/</url>
+      <content type="html"><![CDATA[<pre><code>在使用thinkphp框架时，经常会看到在很多项目目录下有许多内容为空的**index.html**文件，这些文件并没有“任何实际的意义”，却非常碍眼的存在于每一级的目录中，这是为什么呢？
+thinkphp官方给出的解释如下：
+&gt; 在自动生成目录结构的同时，在各个目录下面我们还看到了index.html文件，这是ThinkPHP自动生成的目录安全文件。
+&gt; 为了避免某些服务器开启了目录浏览权限后可以直接在浏览器输入URL地址查看目录，系统默认开启了目录安全文件机制，会在自动生成目录的时候生成空白的index.html文件
+
+在上面这段解释中，我们可以找到2个关键概念：**目录安全文件**, **服务器开启目录浏览权限**。
+就是说，thinkphp之所以要生成这么多空白的index.html文件，就是为了避免服务器不小心开启了目录浏览权限，导致服务器目录可以直接通过浏览器访问。
+
+既然如此，就需要验证一下了。首先，我使用的是nginx服务器，nginx服务器默认是关闭目录列表（directory listing）的。通过修改nginx配置文件，打开整个项目根目录的文件列表权限，配置如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">location /&#123;</div><div class="line">    root $root_path;</div><div class="line">    autoindex on;</div><div class="line">    autoindex_exact_size off;</div><div class="line">    autoindex_localtime on;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+这样，我们就可以访问项目的根目录了。访问效果如下图：
+![root-directory](http://obsd0zj7w.bkt.clouddn.com/20161019-root-directory.png)
+在根目录下因为没有目录安全文件，所以可以查看目录列表，但是当我们进入/Application/目录时，因为目录安全文件的原因，就看不到目录列表了。
+下图是整个项目的目录结构：
+![directory-tree](http://obsd0zj7w.bkt.clouddn.com/20161019-directory-tree.png)
+当点击进入/Application/目录时，结果如下：
+![proctect-file](http://obsd0zj7w.bkt.clouddn.com/20161019-proctect-file.png)
+在这里，我们有理由猜测这样的空界面就是/Application/目录下的index.html文件，因此我在简单修改了该index.html文件，如下：
+index.html
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello,我是/Application/index.html</div></pre></td></tr></table></figure>
+
+再次访问/Application/目录，显示如下：
+![proctect-file-change](http://obsd0zj7w.bkt.clouddn.com/20161019-protect-file-change.png)
+结果和猜测一致，thinkphp的目录安全文件就是在你需要保护的目录中放置空的index.html文件，这样当服务器的目录列表打开时，你也看不到目录的内容，只能看到空白的index.html，从而起到保护的作用。
+
+那么，为什么我访问/Application/目录，当目录下存在index.html时会显示index.html而不是目录结构呢？
+这是nginx给出的解释：
+&gt; The ngx_http_autoindex_module module processes requests ending with the slash character (‘/’) and produces a directory listing. Usually a request is passed to 
+&gt; the ngx_http_autoindex_module module when the ngx_http_index_module module cannot find an index file. 
+就是说，通常当nginx的ngx_http_autoindex_module模块无法找到index文件时，就会把请求传给ngx_http_autoindex_module模块，而这个模块的作用就是以展示目录列表的形式来处理以/结尾的请求，就是我
+们在前面看到的显示文件目录的形式。（当然，前提时nginx开启了显示目录列表，而默认是关闭的，详情参考[参考文件1](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html)）
+
+另外nginx还有deny all指令来实现禁止访问、allow实现允许访问。参见[参考文件2](http://nginx.org/en/docs/http/ngx_http_access_module.html),[参考文件3](https://segmentfault.com/q/1010000003755008/a-1020000003755016)
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ctime,mtime,atime辨析]]></title>
       <url>http://blog.jade640.pub/2016/09/03/ctime-mtime-atime%E8%BE%A8%E6%9E%90/</url>
       <content type="html"><![CDATA[<h4 id="linux下的文件有三个时间参数："><a href="#linux下的文件有三个时间参数：" class="headerlink" title="linux下的文件有三个时间参数："></a>linux下的文件有三个时间参数：</h4><ol>

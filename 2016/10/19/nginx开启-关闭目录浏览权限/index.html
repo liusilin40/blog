@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -84,12 +84,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="640 blog">
-<meta property="og:url" content="http://blog.jade640.pub/archives/index.html">
+<meta name="description" content="在使用thinkphp框架时，经常会看到在很多项目目录下有许多内容为空的**index.html**文件，这些文件并没有“任何实际的意义”，却非常碍眼的存在于每一级的目录中，这是为什么呢？
+thinkphp官方给出的解释如下：
+&amp;gt; 在自动生成目录结构的同时，在各个目录下面我们还看到了index.html文件，这是ThinkPHP自动生成的目录安全文件。
+&amp;gt; 为了避免某些服务器开启了目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx开启/关闭目录浏览权限">
+<meta property="og:url" content="http://blog.jade640.pub/2016/10/19/nginx开启-关闭目录浏览权限/index.html">
 <meta property="og:site_name" content="640 blog">
+<meta property="og:description" content="在使用thinkphp框架时，经常会看到在很多项目目录下有许多内容为空的**index.html**文件，这些文件并没有“任何实际的意义”，却非常碍眼的存在于每一级的目录中，这是为什么呢？
+thinkphp官方给出的解释如下：
+&amp;gt; 在自动生成目录结构的同时，在各个目录下面我们还看到了index.html文件，这是ThinkPHP自动生成的目录安全文件。
+&amp;gt; 为了避免某些服务器开启了目录">
+<meta property="og:updated_time" content="2016-10-19T06:42:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="640 blog">
+<meta name="twitter:title" content="nginx开启/关闭目录浏览权限">
+<meta name="twitter:description" content="在使用thinkphp框架时，经常会看到在很多项目目录下有许多内容为空的**index.html**文件，这些文件并没有“任何实际的意义”，却非常碍眼的存在于每一级的目录中，这是为什么呢？
+thinkphp官方给出的解释如下：
+&amp;gt; 在自动生成目录结构的同时，在各个目录下面我们还看到了index.html文件，这是ThinkPHP自动生成的目录安全文件。
+&amp;gt; 为了避免某些服务器开启了目录">
 
 
 
@@ -110,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.jade640.pub/archives/"/>
+  <link rel="canonical" href="http://blog.jade640.pub/2016/10/19/nginx开启-关闭目录浏览权限/"/>
 
-        <title> 归档 | 640 blog </title>
+        <title> nginx开启/关闭目录浏览权限 | 640 blog </title>
         <meta name="baidu-site-verification" content="jCA4aSZeZ9" />
         <meta name="google-site-verification" content="6KzHMMt4IWbHAdGuBvcez0T5aJTa5BXqva_jghi2euE" />
     </head>
@@ -125,7 +138,7 @@
         
         
 
-        <div class="container one-collumn sidebar-position-left  page-archive  ">
+        <div class="container one-collumn sidebar-position-left page-post-detail ">
             <div class="headband"></div>
 
             <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,214 +249,208 @@
                         <div id="content" class="content">
                             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 5 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                nginx开启/关闭目录浏览权限
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-19T13:34:41+08:00" content="2016-10-19">
+              2016-10-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/19/nginx开启-关闭目录浏览权限/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/19/nginx开启-关闭目录浏览权限/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <pre><code>在使用thinkphp框架时，经常会看到在很多项目目录下有许多内容为空的**index.html**文件，这些文件并没有“任何实际的意义”，却非常碍眼的存在于每一级的目录中，这是为什么呢？
+thinkphp官方给出的解释如下：
+&gt; 在自动生成目录结构的同时，在各个目录下面我们还看到了index.html文件，这是ThinkPHP自动生成的目录安全文件。
+&gt; 为了避免某些服务器开启了目录浏览权限后可以直接在浏览器输入URL地址查看目录，系统默认开启了目录安全文件机制，会在自动生成目录的时候生成空白的index.html文件
+
+在上面这段解释中，我们可以找到2个关键概念：**目录安全文件**, **服务器开启目录浏览权限**。
+就是说，thinkphp之所以要生成这么多空白的index.html文件，就是为了避免服务器不小心开启了目录浏览权限，导致服务器目录可以直接通过浏览器访问。
+
+既然如此，就需要验证一下了。首先，我使用的是nginx服务器，nginx服务器默认是关闭目录列表（directory listing）的。通过修改nginx配置文件，打开整个项目根目录的文件列表权限，配置如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">location /&#123;</div><div class="line">    root $root_path;</div><div class="line">    autoindex on;</div><div class="line">    autoindex_exact_size off;</div><div class="line">    autoindex_localtime on;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+这样，我们就可以访问项目的根目录了。访问效果如下图：
+![root-directory](http://obsd0zj7w.bkt.clouddn.com/20161019-root-directory.png)
+在根目录下因为没有目录安全文件，所以可以查看目录列表，但是当我们进入/Application/目录时，因为目录安全文件的原因，就看不到目录列表了。
+下图是整个项目的目录结构：
+![directory-tree](http://obsd0zj7w.bkt.clouddn.com/20161019-directory-tree.png)
+当点击进入/Application/目录时，结果如下：
+![proctect-file](http://obsd0zj7w.bkt.clouddn.com/20161019-proctect-file.png)
+在这里，我们有理由猜测这样的空界面就是/Application/目录下的index.html文件，因此我在简单修改了该index.html文件，如下：
+index.html
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello,我是/Application/index.html</div></pre></td></tr></table></figure>
+
+再次访问/Application/目录，显示如下：
+![proctect-file-change](http://obsd0zj7w.bkt.clouddn.com/20161019-protect-file-change.png)
+结果和猜测一致，thinkphp的目录安全文件就是在你需要保护的目录中放置空的index.html文件，这样当服务器的目录列表打开时，你也看不到目录的内容，只能看到空白的index.html，从而起到保护的作用。
+
+那么，为什么我访问/Application/目录，当目录下存在index.html时会显示index.html而不是目录结构呢？
+这是nginx给出的解释：
+&gt; The ngx_http_autoindex_module module processes requests ending with the slash character (‘/’) and produces a directory listing. Usually a request is passed to 
+&gt; the ngx_http_autoindex_module module when the ngx_http_index_module module cannot find an index file. 
+就是说，通常当nginx的ngx_http_autoindex_module模块无法找到index文件时，就会把请求传给ngx_http_autoindex_module模块，而这个模块的作用就是以展示目录列表的形式来处理以/结尾的请求，就是我
+们在前面看到的显示文件目录的形式。（当然，前提时nginx开启了显示目录列表，而默认是关闭的，详情参考[参考文件1](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html)）
+
+另外nginx还有deny all指令来实现禁止访问、allow实现允许访问。参见[参考文件2](http://nginx.org/en/docs/http/ngx_http_access_module.html),[参考文件3](https://segmentfault.com/q/1010000003755008/a-1020000003755016)
+</code></pre>
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://obsd0zj7w.bkt.clouddn.com/%E5%BE%AE%E4%BF%A12.png" alt="jade640 WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://obsd0zj7w.bkt.clouddn.com/%E6%94%AF%E4%BB%98%E5%AE%9D2.jpg" alt="jade640 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/19/nginx开启-关闭目录浏览权限/" itemprop="url">
-              
-                <span itemprop="name">nginx开启/关闭目录浏览权限</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/03/ctime-mtime-atime辨析/" rel="next" title="ctime,mtime,atime辨析">
+                <i class="fa fa-chevron-left"></i> ctime,mtime,atime辨析
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-19T13:34:41+08:00"
-              content="2016-10-19" >
-          10-19
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/19/nginx开启-关闭目录浏览权限/"
+     data-title="nginx开启/关闭目录浏览权限"
+     data-content="分享自 640 blog, nginx开启/关闭目录浏览权限"
+     data-url="#" id="duoshuo_share_640">
+     <script>
+        var tag = document.getElementById("duoshuo_share_640");
+        var url = window.location.href;
+        tag.setAttribute("data-url", url);
+     </script>
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
 
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/03/ctime-mtime-atime辨析/" itemprop="url">
-              
-                <span itemprop="name">ctime,mtime,atime辨析</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-03T10:25:06+08:00"
-              content="2016-09-03" >
-          09-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/22/HTTP-协议/" itemprop="url">
-              
-                <span itemprop="name">HTTP 协议</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-22T15:43:30+08:00"
-              content="2016-08-22" >
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/22/linux-passwd-文件内容解析/" itemprop="url">
-              
-                <span itemprop="name">linux passwd 文件内容解析</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-22T14:07:28+08:00"
-              content="2016-08-22" >
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/07/deploy-hexo-and-write-post/" itemprop="url">
-              
-                <span itemprop="name">deploy hexo and write post</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-07T23:12:48+08:00"
-              content="2016-08-07" >
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
                         </div>
@@ -451,6 +458,14 @@
 
 
                         
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/19/nginx开启-关闭目录浏览权限/"
+           data-title="nginx开启/关闭目录浏览权限" data-url="http://blog.jade640.pub/2016/10/19/nginx开启-关闭目录浏览权限/">
+      </div>
+    
+  </div>
+
 
                     </div>
                     
@@ -470,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oebj1fd9f.bkt.clouddn.com/avatar.png"
@@ -541,6 +565,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -655,11 +690,9 @@
         
 
         
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
         
